@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 因为vue中的mustache语法只能写在挂载元素的文本区域 -->
+            <!-- 当我们需要动态绑定属性时则需要v-bind指令 -->
+            <a v-bind:href="bindherf">百度</a>
+            <!-- v-buid指令的语法糖学法 : -->
+            <a :href="bindherf">百度</a>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    bindherf: "https://www.baidu.com",
+                },
+            });
+        </script>
+    </body>
+</html>
