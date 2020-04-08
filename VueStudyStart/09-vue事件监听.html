@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click.stop="printlog1">点我啊1</button>
+            <button v-on:click.prevevt="printlog2">点我啊2</button>
+            <button v-on:click="printlog3(1)">点我啊3</button>
+            <button v-on:click="printlog4(1,$event)">点我啊4</button>
+            <!-- 阻止事件冒泡 -->
+            <button v-on:click.stop="printlog1">点我啊1</button>
+            <!-- 阻止默认行为 -->
+            <button v-on:click.prevevt="printlog2">点我啊2</button>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                methods: {
+                    printlog1() {
+                        console.log("printlog1", "触发了点击事件");
+                    },
+                    printlog2(event) {
+                        console.log("printlog2", "event", event);
+                        console.log(event.target);
+                    },
+                    printlog3(event) {
+                        console.log("printlog3", "event", event);
+                    },
+                    printlog4(index, event) {
+                        console.log(
+                            "printlog4",
+                            "index",
+                            index,
+                            "event",
+                            event
+                        );
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>

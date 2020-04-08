@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+        }
+    </style>
+    <body>
+        <div id="app">
+            <!-- v-show操作的是元素的display属性隐藏就是none 显示为block  与v-if不同v-if是移除或者不渲染-->
+            <div v-show="true">显示</div>
+            <div v-show="false">隐藏</div>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+            });
+        </script>
+    </body>
+</html>

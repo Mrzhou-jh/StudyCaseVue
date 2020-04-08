@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 那一个符合条件显示哪一个 -->
+            <div v-if="Results>80">A</div>
+            <div v-if="Results>=70">B</div>
+            <div v-if="Results>=60">C</div>
+            <div v-if="Results>=10">D</div>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    Results: 10,
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <p>姓名:{{fullname}}</p>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: { fristName: "张", lastNmae: "三" },
+                computed: {
+                    fullname: function () {
+                        return this.fristName + this.lastNmae;
+                    },
+                },
+                /*
+                computed计算属性原貌
+
+                computed:{
+                    fullname:{
+                        set:function(){
+
+                        }
+                        get:function(){
+                            return: this.fristname+this.lastname
+                        }
+                    }
+                } 
+                computed计算属性是一个对象类型它的的值也是对象类型
+                且包含了set和get方法
+                一般计算属性中不让随便设置值因此set方法一般不写
+                因此该对象中指包含get方法最后就直接简写成   
+                computed: {
+                    fullname: function () {
+                        return this.fristName + this.lastNmae;
+                    },
+                },
+                此时的fullname还是一个对象类型指向get方法然后返回计算后的值
+                
+                因此在mustachee语法中是用computed属性时不用写小括号 
+                
+                
+                且computed计算属性性能优于methods属性因为当多次复用computed属性时除了第一次运行了get方法其余都是使用的第一次的缓存
+                
+                而methods方法属性则是用一次要执行一次因此性能更低             */
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(item,index) in data1">{{index}}{{item}}</li>
+                <li v-for="(item,key,index) in data2">
+                    {{item}}{{key}}{{index}}
+                </li>
+            </ul>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    data1: ["数据1", "数据2", "数据3"],
+                    data2: { dd: "遍1", ss: "遍2" },
+                },
+            });
+        </script>
+    </body>
+</html>
