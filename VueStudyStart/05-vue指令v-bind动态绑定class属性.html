@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+    <body>
+        <div id="app">
+            <!-- v-dind指令动态绑定class属性对象写法 {active:true,active2:true} 键值对键名就是类名，值是true和false true表示启用-->
+            <h2 v-bind:class="{active:true}">动态绑定css</h2>
+            <!-- v-dind指令动态绑定class属性数组写法 [active,active2] 表示同时添加数组中的类-->
+            <h2 v-bind:class="[active,active2]">动态绑定css</h2>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+            });
+        </script>
+    </body>
+</html>

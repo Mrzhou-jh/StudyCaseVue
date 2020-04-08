@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+    <body>
+        <div id="app">
+            <ul>
+                <li
+                    v-for="(item,index) in dataList"
+                    :class="{active:index==currentIndex}"
+                    @click="change(index)"
+                >
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    dataList: ["列表1", "列表2", "列表3", "列表4", "列表5"],
+                    currentIndex: 0,
+                },
+                methods: {
+                    change(index) {
+                        this.currentIndex = index;
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- {fontSize:size+'px'}键指的是样式名称:值是值样式值 -->
+            <p v-bind:style="{fontSize:size+'px'}">{{msg}}</p>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: { msg: "霍山石斛", size: 50 },
+            });
+        </script>
+    </body>
+</html>
