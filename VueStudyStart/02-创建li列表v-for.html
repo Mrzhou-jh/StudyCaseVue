@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <!-- 遍历出数组值和下标值并创建对应的列表 -->
+                <!-- 注意：(item ,index)中的值得名字是自定义的随便什么名字   指的顺序是固定的，第一个是item值第二个是下表值 -->
+                <li v-for="(item ,index) in liList">{{index}}{{item}}</li>
+            </ul>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    liList: ["列表1", "列表2", "列表3", "列表4", "列表5"],
+                },
+            });
+        </script>
+    </body>
+</html>

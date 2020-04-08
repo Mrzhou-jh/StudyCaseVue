@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 创建div并指定id vue将通过id将该元素及其子元素挂载管理 -->
+        <div id="app">
+            <!-- 使用mustache语法绑定vue实例中data的数据 -->
+            <h2>{{msg}}</h2>
+        </div>
+        <!-- 映入Vue框架 -->
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            // 创建vue实例
+            const app = new Vue({
+                el: "#app", //通过元素id挂载管理元素及其子元素
+                //定义数据对象
+                data: {
+                    msg: "vue你好啊", //通过数据对形象data的属性名和mustach语法将数据绑定到元素中
+                },
+            });
+        </script>
+    </body>
+</html>

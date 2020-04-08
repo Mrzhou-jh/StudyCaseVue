@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2>写法一</h2>
+            <button v-on:click="count1++">+</button>
+            <span> {{count1}} </span>
+            <button @click="count1--">-</button>
+
+            <h2>写法二</h2>
+            <button v-on:click="add">+</button>
+            <span> {{count2}} </span>
+            <button @click="sub">-</button>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    count1: 0,
+                    count2: 0,
+                },
+                methods: {
+                    add: function () {
+                        if (this.count2 >= 0) {
+                            this.count2++;
+                        }
+                    },
+                    sub() {
+                        if (this.count2 == 0) {
+                            return;
+                        }
+                        this.count2--;
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
