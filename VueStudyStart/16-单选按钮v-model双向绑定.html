@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="app">
-        
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-model绑定的变量值和value的值相等则默认选中 -->
+            <input type="radio" value="男" id="dd" v-model="sex" />男
+            <input type="radio" value="女" id="bhasb" v-model="sex" />女
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    sex: "男",
+                },
+            });
+        </script>
+    </body>
 </html>

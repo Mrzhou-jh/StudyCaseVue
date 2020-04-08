@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <input
+                type="checkbox"
+                name="接收协议"
+                value="接收"
+                id=""
+                v-model="isOk"
+            />接收协议
+            <p>{{isOk}}</p>
+
+            <input type="checkbox" value="爱好1" v-model="hpbbies" />爱好1
+            <input type="checkbox" value="爱好2" v-model="hpbbies" />爱好2
+            <input type="checkbox" value="爱好3" v-model="hpbbies" />爱好3
+
+            <ul>
+                <li v-for="item in hpbbies">{{item}}</li>
+            </ul>
+            <!-- v-model绑定的变量值与value相等这默认选中 -->
+            <select name="" id="" v-model="fruit">
+                <option value="列表1">列表1</option>
+                <option value="列表2">列表2</option>
+                <option value="列表3">列表3</option>
+            </select>
+            <!-- 多选 -->
+            <select name="" id="" v-model="fruits" multiple>
+                <option value="列表1">列表1</option>
+                <option value="列表2">列表2</option>
+                <option value="列表3">列表3</option>
+            </select>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    isOk: false,
+                    hpbbies: [],
+                    fruit: "列表2",
+                    fruits: [],
+                },
+            });
+        </script>
+    </body>
+</html>
