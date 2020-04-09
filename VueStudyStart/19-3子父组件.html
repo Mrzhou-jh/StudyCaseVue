@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <template id="tp1">
+        <div>
+            <div>组件1</div>
+            <mycpn2></mycpn2>
+        </div>
+    </template>
+    <template id="tp2">
+        <div>组件2</div>
+    </template>
+    <body>
+        <div id="app">
+            <mycpn1></mycpn1>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            //每个组件构造器都有自己的components对象属性因此将另一个组件构造器在自己的构造器components对象属性中进行注册那么该组件就是你的子组件
+            // 子组件只可以在父组件中使用
+            // 局部组件只能在注册到的组件中使用
+            //子组件的使用是将在父组件中注册的组件名在父组件构造器的template属性中使用
+            const mycomponent2 = Vue.extend({
+                template: "#tp2",
+            });
+            const mycomponent1 = Vue.extend({
+                template: "#tp1",
+                components: {
+                    mycpn2: mycomponent2,
+                },
+            });
+            const app = new Vue({
+                el: "#app",
+                components: {
+                    mycpn1: mycomponent1,
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <template id="tp1">
+        <div>
+            <div>这里是子组件拿到的父组件数据是：{{msg1}}</div>
+            <div @click="send">
+                这里是子组件点击我向父组件传递的数据是：{{info}}
+            </div>
+        </div>
+    </template>
+    <body>
+        <div id="app">
+            <div>我是父组件我要传递的数据是：{{msg}}</div>
+            <mycpn1 :msg1="msg" @sendinfo="getinfo"></mycpn1>
+            <div>我是父组件接收子组件的信息是:{{info1}}</div>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: { msg: "你好", info1: "" },
+                methods: {
+                    getinfo(info) {
+                        this.info1 = info;
+                        console.log(this.info1);
+                    },
+                },
+
+                components: {
+                    mycpn1: {
+                        template: "#tp1",
+                        data() {
+                            return { info: "你也好啊" };
+                        },
+                        props: ["msg1"],
+                        methods: {
+                            send() {
+                                this.$emit("sendinfo", this.info);
+                            },
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>

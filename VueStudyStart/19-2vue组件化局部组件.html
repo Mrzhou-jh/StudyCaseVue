@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <mycpn></mycpn>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            // 注册局部组件实在vue实例中通过components对象属性进行注册
+            // 属性值的键为组件名，值是组件构造器
+            const mycomponent = Vue.extend({
+                template: `<div>这是注册的局部组件(子组件)`,
+            });
+            const app = new Vue({
+                el: "#app",
+                components: {
+                    mycpn: mycomponent,
+                },
+            });
+        </script>
+    </body>
+</html>

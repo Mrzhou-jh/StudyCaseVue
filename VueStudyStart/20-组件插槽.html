@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <template id="tp1">
+        <div>
+            <div>子组件</div>
+            <slot name="slot1"></slot>
+            <slot></slot>
+        </div>
+    </template>
+    <body>
+        <div id="app">
+            <mycpn
+                ><div>插槽</div>
+                <div slot="slot1">dsjkfjdsakfdjksafjdsajkfd</div></mycpn
+            >
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                components: {
+                    mycpn: {
+                        template: "#tp1",
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <template id="tp1"> <div>{{msg1}}</div> </template>
+    <body>
+        <!-- 每个组件都有自己的data属性且该属性值必须是一个函数类型然后返回一个对象 -->
+        <!-- 父组件不能直接访问子组件中的data子组件同样不能随便访问父组件的data -->
+        <div id="app">
+            <div>{{msg}}</div>
+            <mycpn1></mycpn1>
+        </div>
+        <script src="./vuejs/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: { msg: "vue实例是一个特殊的组件" },
+                components: {
+                    mycpn1: {
+                        template: "#tp1",
+                        data() {
+                            return { msg1: "这是子组件的data" };
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
