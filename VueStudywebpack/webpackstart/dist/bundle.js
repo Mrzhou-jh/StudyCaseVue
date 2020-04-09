@@ -67,12 +67,14 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 // const app = new Vue({
 //     el: "#app",
 //     data: {},
 // });
 __webpack_require__(1);
-
 
 /***/ }),
 /* 1 */
